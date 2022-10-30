@@ -31,6 +31,14 @@ function createSquare(idSquare) {
   //lo appende al container
   const square = document.createElement('div');
   square.className = 'square';
-  square.innerHTML = idSquare + 1;
+  //square.innerHTML = idSquare + 1;
+  //creo una proprieta custom di square dove gli salvo il numero del quadratino
+  square.idSquare = idSquare + 1;
+  square.addEventListener('click', clicksquare)
   container.append(square);
+}
+
+function clicksquare() {
+  //la parola chiave this ci restituisce l'evento cliccato, il this deve essere all'interno di un listener di eventi 
+  console.log(this.idSquare);
 }
