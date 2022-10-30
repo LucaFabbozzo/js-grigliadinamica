@@ -13,6 +13,8 @@
 //prendiamo il container per poter creare all'interno i quadrati dinamicamente
 const container = document.querySelector('.container');
 const elementsPerRow = 8;
+//in questo array salvo tutti i miei id estratti per il controllo di univocità
+const randomIds = [];
 
 //funzione di inizializzazione di tutto
 init(elementsPerRow);
@@ -33,9 +35,9 @@ function createSquare(maxSquare) {
   square.className = 'square';
   //square.innerHTML = idSquare + 1;
   //creo una proprieta custom di square dove gli salvo il numero del quadratino, è come salvare informazioni all'interno di un'oggetto
-  const randomId = getRandomNumber(1, maxSquare);
+  const randomId = getUniqueRandomNumber(maxSquare);
   square.idElement = randomId;
-  square.innerHTML = randomId;
+  //square.innerHTML = randomId;
   square.addEventListener('click', clickSquare)
   container.append(square);
 }
@@ -46,6 +48,18 @@ function clickSquare() {
   this.innerHTML = this.idElement;
   //con l'operatore ternario filtro la classe da aggiungere
   this.classList.add((this.idElement % 2) ? 'odd' : 'even');
+}
+
+//funzione per ottenere numeri unici senza doppioni, devo creare la mia logica per l'unicita
+function getUniqueRandomNumber(numElements) {
+  let randomId;
+
+    do {
+      randomId = getRandomNumber(1, numElements);
+    }while(randomId.includes(randomId));
+
+    randomIds.push(randomId); 
+    return randomId;
 }
 
 
