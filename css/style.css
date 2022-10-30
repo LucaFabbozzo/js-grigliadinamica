@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background-color: cornflowerblue;
+  background-color: #161617;
   color: white;
 }
 
@@ -36,9 +36,9 @@ body {
 }
 
 .square.odd {
-  background-color: red;
+  background-color: #b93636;
 }
 
 .square.even {
-  background-color: green;
+  background-color: rgb(63, 128, 63);
 }
