@@ -27,7 +27,7 @@ function init(numElements) {
   }
 }
 
-function createSquare(maxSquare) {
+function createSquare(maxSquares) {
   //crea il quadratino 
   //lo valorizza
   //lo appende al container
@@ -35,7 +35,7 @@ function createSquare(maxSquare) {
   square.className = 'square';
   //square.innerHTML = idSquare + 1;
   //creo una proprieta custom di square dove gli salvo il numero del quadratino, è come salvare informazioni all'interno di un'oggetto
-  const randomId = getUniqueRandomNumber(maxSquare);
+  const randomId = getUniqueRandomNumber(maxSquares);
   square.idElement = randomId;
   //square.innerHTML = randomId;
   square.addEventListener('click', clickSquare)
@@ -56,7 +56,7 @@ function getUniqueRandomNumber(numElements) {
 
     do {
       randomId = getRandomNumber(1, numElements);
-    }while(randomId.includes(randomId));
+    }while(randomIds.includes(randomId));
 
     randomIds.push(randomId); 
     return randomId;
