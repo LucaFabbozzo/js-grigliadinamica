@@ -16,9 +16,16 @@ const elementsPerRow = 8;
 //in questo array salvo tutti i miei id estratti per il controllo di univocità
 const randomIds = [];
 
-//funzione di inizializzazione di tutto
-init(elementsPerRow);
+//al click del bottone start faccio comparire la mia griglia 
+document.getElementById('start').addEventListener('click', function(){
+  container.innerHTML = '';
+  init(elementsPerRow);
+})
 
+/**
+ * 
+ * @param {number} numElements 
+ */
 function init(numElements) {
   const totalSquares = Math.pow(numElements, 2);
   console.log(totalSquares)
@@ -26,6 +33,7 @@ function init(numElements) {
     createSquare(totalSquares);
   }
 }
+
 
 function createSquare(maxSquares) {
   //crea il quadratino 
@@ -58,6 +66,7 @@ function clickSquare() {
 }
 
 //funzione per ottenere numeri unici senza doppioni, devo creare la mia logica per l'unicita
+
 function getUniqueRandomNumber(numElements) {
   let randomId;
 
@@ -71,6 +80,12 @@ function getUniqueRandomNumber(numElements) {
 
 
 //funzione per ottenere numeri random
+/**
+ * Returns a random number between minimum and maximum
+ * @param {number} min 
+ * @param {number} max 
+ * @returns Random number
+ */
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
