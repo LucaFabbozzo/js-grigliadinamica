@@ -9,3 +9,27 @@
 // 2 creare la griglia dinamicamente
 // 3 numerare i quadratini
 // 4 gestire il click del quadratino
+
+//prendiamo il container per poter creare all'interno i quadrati dinamicamente
+const container = document.querySelector('.container');
+const elementsPerRow = 8;
+
+//funzione di inizializzazione di tutto
+init(elementsPerRow);
+
+function init(numElements) {
+  const totalSquares = Math.pow(numElements, 2);
+  console.log(totalSquares)
+  for(let i = 0; i < totalSquares; i++) {
+    createSquare()
+  }
+}
+
+function createSquare() {
+  //crea il quadratino 
+  //lo valorizza
+  //lo appende al container
+  const square = document.createElement('div');
+  square.className = 'square';
+  container.append(square);
+}
