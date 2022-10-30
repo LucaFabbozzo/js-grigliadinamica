@@ -41,4 +41,5 @@ function createSquare(idSquare) {
 function clicksquare() {
   //la parola chiave this ci restituisce l'evento cliccato, il this deve essere all'interno di un listener di eventi 
   console.log(this.idElement);
+  this.innerHTML = this.idElement;
 }
