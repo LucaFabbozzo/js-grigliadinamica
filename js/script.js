@@ -38,8 +38,15 @@ function createSquare(maxSquares) {
   const randomId = getUniqueRandomNumber(maxSquares);
   square.idElement = randomId;
   //square.innerHTML = randomId;
+  square.style.width = generateCalcCss();
+  square.style.height = generateCalcCss();
   square.addEventListener('click', clickSquare)
   container.append(square);
+}
+
+//funzione per generare calcolo css
+function generateCalcCss() {
+  return `calc(100% / ${elementsPerRow})`
 }
 
 function clickSquare() {
