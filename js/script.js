@@ -34,12 +34,14 @@ function createSquare(idSquare) {
   //square.innerHTML = idSquare + 1;
   //creo una proprieta custom di square dove gli salvo il numero del quadratino, è come salvare informazioni all'interno di un'oggetto
   square.idElement = idSquare + 1;
-  square.addEventListener('click', clicksquare)
+  square.addEventListener('click', clickSquare)
   container.append(square);
 }
 
-function clicksquare() {
+function clickSquare() {
   //la parola chiave this ci restituisce l'evento cliccato, il this deve essere all'interno di un listener di eventi 
   console.log(this.idElement);
   this.innerHTML = this.idElement;
+  //con l'operatore ternario filtro la classe da aggiungere
+  this.classList.add((this.idElement % 2) ? 'odd' : 'even');
 }

@@ -34,3 +34,11 @@ body {
   height: calc(100% / 8);
   border: 2px solid white;
 }
+
+.square.odd {
+  background-color: red;
+}
+
+.square.even {
+  background-color: green;
+}
