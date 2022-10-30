@@ -21,11 +21,11 @@ function init(numElements) {
   const totalSquares = Math.pow(numElements, 2);
   console.log(totalSquares)
   for(let i = 0; i < totalSquares; i++) {
-    createSquare(i)
+    createSquare(totalSquares);
   }
 }
 
-function createSquare(idSquare) {
+function createSquare(maxSquare) {
   //crea il quadratino 
   //lo valorizza
   //lo appende al container
@@ -33,7 +33,9 @@ function createSquare(idSquare) {
   square.className = 'square';
   //square.innerHTML = idSquare + 1;
   //creo una proprieta custom di square dove gli salvo il numero del quadratino, è come salvare informazioni all'interno di un'oggetto
-  square.idElement = idSquare + 1;
+  const randomId = getRandomNumber(1, maxSquare);
+  square.idElement = randomId;
+  square.innerHTML = randomId;
   square.addEventListener('click', clickSquare)
   container.append(square);
 }
@@ -44,4 +46,10 @@ function clickSquare() {
   this.innerHTML = this.idElement;
   //con l'operatore ternario filtro la classe da aggiungere
   this.classList.add((this.idElement % 2) ? 'odd' : 'even');
+}
+
+
+//funzione per ottenere numeri random
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
