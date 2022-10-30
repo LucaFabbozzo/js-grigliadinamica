@@ -12,12 +12,13 @@
 
 //prendiamo il container per poter creare all'interno i quadrati dinamicamente
 const container = document.querySelector('.container');
-const elementsPerRow = 8;
+let elementsPerRow;
 //in questo array salvo tutti i miei id estratti per il controllo di univocità
 const randomIds = [];
 
 //al click del bottone start faccio comparire la mia griglia 
 document.getElementById('start').addEventListener('click', function(){
+  elementsPerRow = document.getElementById('elements').value;
   container.innerHTML = '';
   init(elementsPerRow);
 })
