@@ -32,8 +32,8 @@ function createSquare(idSquare) {
   const square = document.createElement('div');
   square.className = 'square';
   //square.innerHTML = idSquare + 1;
-  //creo una proprieta custom di square dove gli salvo il numero del quadratino
-  square.idSquare = idSquare + 1;
+  //creo una proprieta custom di square dove gli salvo il numero del quadratino, è come salvare informazioni all'interno di un'oggetto
+  square.idElement = idSquare + 1;
   square.addEventListener('click', clicksquare)
   container.append(square);
 }
