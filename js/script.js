@@ -21,15 +21,16 @@ function init(numElements) {
   const totalSquares = Math.pow(numElements, 2);
   console.log(totalSquares)
   for(let i = 0; i < totalSquares; i++) {
-    createSquare()
+    createSquare(i)
   }
 }
 
-function createSquare() {
+function createSquare(idSquare) {
   //crea il quadratino 
   //lo valorizza
   //lo appende al container
   const square = document.createElement('div');
   square.className = 'square';
+  square.innerHTML = idSquare + 1;
   container.append(square);
 }
